@@ -10,7 +10,8 @@ body {
 	min-width: 100%;
 	min-height: 100vh;
 	color: white;
-	font-family: 'Roboto', sans-serif;
+	padding: 2rem;
+	font-family: 'Cairo', sans-serif;
 	background: linear-gradient(
 		180deg,
 		rgba(14, 185, 253, 1) 0%,
@@ -114,9 +115,9 @@ body {
 		),
 		linear-gradient(
 			to right,
-			rgba(255, 255, 255, 1),
-			rgb(255, 255, 255),
-			rgb(255, 255, 255)
+			rgba(255, 255, 255, 0.849),
+			rgba(255, 255, 255, 0.76),
+			rgba(255, 255, 255, 0.589)
 		);
 	background-size: 100% 0.1em, 0 0.1em;
 	background-position: 100% 100%, 0 100%;
@@ -133,7 +134,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	gap: 3rem;
+	gap: 2rem;
 	animation: fadeIn 0.2s linear;
 	-webkit-animation: fadeIn 0.2s linear;
 }
@@ -149,6 +150,8 @@ body {
 	font-size: 3.2rem;
 }
 .block__head-icon {
+	display: grid;
+	place-items: center;
 	font-size: 4rem;
 }
 .block__temp {
@@ -169,14 +172,12 @@ body {
 .block__temp-base-value {
 	display: inline;
 	font-size: 2.3rem;
-	font-weight: 500;
-	transition: text-shadow 0.5s ease;
+	font-weight: 400;
 }
 .block__temp-feels-value {
 	display: inline;
 	font-size: 2.3rem;
-	font-weight: 500;
-	transition: text-shadow 0.5s ease;
+	font-weight: 400;
 }
 /* .block__temp:hover .block__temp-value {
 	text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
