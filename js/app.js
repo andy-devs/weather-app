@@ -1,5 +1,3 @@
-const APIkey = config.APIkey;
-
 let spinner = document.querySelector('.spinner');
 let block = document.querySelector('.block');
 let region = document.querySelector('.block__head-region');
