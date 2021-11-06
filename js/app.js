@@ -84,4 +84,8 @@ window.addEventListener('load', () => {
 // });
 
 const elements = document.getElementsByTagName('*');
-VanillaTilt.init(elements);
+VanillaTilt.init(elements, {
+	max: 50,
+	speed: 400,
+	gyroscope: true,
+});
