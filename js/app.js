@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 		navigator.geolocation.getCurrentPosition(function (position) {
 			lon = position.coords.longitude;
 			lat = position.coords.latitude;
-			const api = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=5&units=metric&appid=${APIkey}`;
+			const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&cnt=5&units=metric&appid=${APIkey}`;
 			fetch(api)
 				.then((response) => response.json())
 				.then((data) => {
@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
 						block.style.display = 'flex';
 					}, 100);
 
-					let responseData = data.list[0];
+					let responseData = data;
 					let regionData = responseData['name'];
 					let desriptionData =
 						responseData['weather'][0]['description'];
