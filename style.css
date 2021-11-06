@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: grid;
+	place-items: center;
+	min-width: 100%;
+	min-height: 100vh;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(
+		180deg,
+		rgba(14, 185, 253, 1) 0%,
+		rgba(16, 79, 109, 1) 100%
+	);
+}
+@-webkit-keyframes rotating {
+	from {
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotating {
+	from {
+		-ms-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-ms-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+.spinner {
+	font-size: 5rem;
+	animation: rotating 2s linear infinite, fadeIn 0.2s linear;
+	-webkit-animation: rotating 2s linear infinite, fadeIn 0.2s linear;
+}
+
+.spinner .animated {
+	animation: fadeOut 1s linear;
+	-webkit-animation: fadeOut 1s linear;
+}
+.block {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 3rem;
+	animation: fadeIn 0.2s linear;
+	-webkit-animation: fadeIn 0.2s linear;
+}
+
+.block__head {
+	gap: 2rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.block__head-region {
+	font-size: 3.2rem;
+}
+.block__head-icon {
+	font-size: 4rem;
+}
+.block__temp {
+	cursor: pointer;
+	font-size: 2rem;
+}
+.block__temp-value {
+	display: inline;
+	font-size: 2.3rem;
+	font-weight: 500;
+	transition: text-shadow 0.5s ease;
+}
+.block__temp:hover .block__temp-value {
+	text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
+}
+
+.block__temp-type {
+	font-size: 2rem;
+	font-weight: 400;
+	color: rgb(25, 84, 161);
+	transition: text-shadow 0.5s ease;
+}
+.block__temp:hover .block__temp-type {
+	text-shadow: 1px 1px 10px rgba(25, 84, 161, 0.6);
+}
+.block__state {
+	font-size: 1.5rem;
+}
