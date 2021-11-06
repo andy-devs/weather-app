@@ -202,3 +202,86 @@ body {
 	font-size: 1.8rem;
 	font-weight: 300;
 }
+
+@media (max-width: 500px) {
+	.block__head {
+		gap: 1rem;
+	}
+	.block__addition {
+		display: flex;
+		align-items: center;
+		gap: 1.2rem;
+		padding: 1.3rem;
+	}
+	.block__addition-wind,
+	.block__addition-pressure,
+	.block__addition-humidity {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.block__addition-wind__head,
+	.block__addition-pressure__head,
+	.block__addition-humidity__head {
+		font-weight: normal;
+		font-size: 1.6rem;
+		font-weight: 300;
+	}
+	.block__addition-wind__info,
+	.block__addition-pressure__info,
+	.block__addition-humidity__info {
+		display: inline;
+		font-size: 1.6rem;
+	}
+	.block__addition-item-block {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.block__addition-wind__unit {
+		font-size: 1.2rem;
+		font-weight: 300;
+	}
+}
+@media (max-width: 350px) {
+	.block__head {
+		gap: 0.7rem;
+	}
+	.block__addition {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1.2rem;
+	}
+	.block__addition-wind,
+	.block__addition-pressure,
+	.block__addition-humidity {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.block__addition-wind__head,
+	.block__addition-pressure__head,
+	.block__addition-humidity__head {
+		font-weight: normal;
+		font-size: 1.4rem;
+		font-weight: 300;
+	}
+	.block__addition-wind__info,
+	.block__addition-pressure__info,
+	.block__addition-humidity__info {
+		display: inline;
+		font-size: 1.4rem;
+	}
+	.block__addition-item-block {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.block__addition-wind__unit {
+		font-size: 1.1rem;
+		font-weight: 300;
+	}
+}
