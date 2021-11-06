@@ -1,16 +1,16 @@
-let spinner = document.querySelector('.spinner');
-let block = document.querySelector('.block');
-let region = document.querySelector('.block__head-region');
-let icon = document.querySelector('.block__head-icon');
-let tempBlock = document.querySelector('.block__temp');
-let tempBaseValue = document.querySelector('.block__temp-base-value');
-let tempBaseType = document.querySelector('.block__temp-base-type');
-let tempFeelsValue = document.querySelector('.block__temp-feels-value');
-let tempFeelsType = document.querySelector('.block__temp-feels-type');
-let wind = document.querySelector('.block__addition-wind__info');
-let pressure = document.querySelector('.block__addition-pressure__info');
-let humidity = document.querySelector('.block__addition-humidity__info');
-let descText = document.querySelector('.block__state');
+const spinner = document.querySelector('.spinner');
+const block = document.querySelector('.block');
+const region = document.querySelector('.block__head-region');
+const icon = document.querySelector('.block__head-icon');
+const tempBlock = document.querySelector('.block__temp');
+const tempBaseValue = document.querySelector('.block__temp-base-value');
+const tempBaseType = document.querySelector('.block__temp-base-type');
+const tempFeelsValue = document.querySelector('.block__temp-feels-value');
+const tempFeelsType = document.querySelector('.block__temp-feels-type');
+const wind = document.querySelector('.block__addition-wind__info');
+const pressure = document.querySelector('.block__addition-pressure__info');
+const humidity = document.querySelector('.block__addition-humidity__info');
+const descText = document.querySelector('.block__state');
 
 window.addEventListener('load', () => {
 	let lon;
@@ -63,29 +63,30 @@ window.addEventListener('load', () => {
 	}
 });
 
-// let tempBlockState = 'c';
+let tempBlockState = 'c';
 
-// tempBlock.addEventListener('click', (e) => {
-// 	const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
-// 	const fahrenheitToCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
-// 	if (tempBlockState === 'c') {
-// 		tempValue.innerText = Math.round(
-// 			celsiusToFahrenheit(tempValue.innerText)
-// 		);
-// 		tempType.innerText = 'F';
-// 		tempBlockState = 'f';
-// 	} else if (tempBlockState === 'f') {
-// 		tempValue.innerText = Math.round(
-// 			fahrenheitToCelsius(tempValue.innerText)
-// 		);
-// 		tempType.innerText = 'C';
-// 		tempBlockState = 'c';
-// 	}
-// });
-
-const elements = document.getElementsByTagName('*');
-VanillaTilt.init(elements, {
-	max: 50,
-	speed: 400,
-	gyroscope: true,
+tempBlock.addEventListener('click', (e) => {
+	const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+	const fahrenheitToCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
+	if (tempBlockState === 'c') {
+		tempBaseValue.innerText = Math.round(
+			celsiusToFahrenheit(tempBaseValue.innerText)
+		);
+		tempFeelsValue.innerText = Math.round(
+			celsiusToFahrenheit(tempFeelsValue.innerText)
+		);
+		tempBaseType.innerText = 'F';
+		tempFeelsType.innerText = 'F';
+		tempBlockState = 'f';
+	} else if (tempBlockState === 'f') {
+		tempBaseValue.innerText = Math.round(
+			fahrenheitToCelsius(tempBaseValue.innerText)
+		);
+		tempFeelsValue.innerText = Math.round(
+			fahrenheitToCelsius(tempFeelsValue.innerText)
+		);
+		tempBaseType.innerText = 'C';
+		tempFeelsType.innerText = 'C';
+		tempBlockState = 'c';
+	}
 });

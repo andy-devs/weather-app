@@ -161,6 +161,7 @@ body {
 	font-size: 4rem;
 }
 .block__temp {
+	cursor: pointer;
 	font-size: 2rem;
 }
 .block__temp-base,
