@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 body {
 	display: grid;
@@ -109,28 +110,95 @@ body {
 	font-size: 4rem;
 }
 .block__temp {
-	cursor: pointer;
 	font-size: 2rem;
 }
-.block__temp-value {
+.block__temp-base,
+.block__temp-feels {
+	gap: 0.5rem;
+	display: flex;
+	align-items: baseline;
+	justify-content: flex-end;
+}
+.block__temp-base-desc,
+.block__temp-feels-desc {
+	margin-right: 0.8rem;
+	font-weight: 300;
+}
+.block__temp-base-value {
 	display: inline;
 	font-size: 2.3rem;
 	font-weight: 500;
 	transition: text-shadow 0.5s ease;
 }
-.block__temp:hover .block__temp-value {
-	text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
+.block__temp-feels-value {
+	display: inline;
+	font-size: 2.3rem;
+	font-weight: 500;
+	transition: text-shadow 0.5s ease;
 }
+/* .block__temp:hover .block__temp-value {
+	text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.6);
+} */
 
-.block__temp-type {
+.block__temp-feels-type {
 	font-size: 2rem;
 	font-weight: 400;
 	color: rgb(25, 84, 161);
 	transition: text-shadow 0.5s ease;
 }
-.block__temp:hover .block__temp-type {
-	text-shadow: 1px 1px 10px rgba(25, 84, 161, 0.6);
+.block__temp-base-type {
+	font-size: 2rem;
+	font-weight: 400;
+	color: rgb(25, 84, 161);
+	transition: text-shadow 0.5s ease;
 }
+/* .block__temp:hover .block__temp-type {
+	text-shadow: 1px 1px 10px rgba(25, 84, 161, 0.6);
+} */
 .block__state {
-	font-size: 1.5rem;
+	font-weight: 300;
+	font-size: 2.2rem;
+}
+.block__addition {
+	display: flex;
+	align-items: center;
+	gap: 1.8rem;
+	background-color: rgba(223, 224, 224, 0.226);
+	padding: 1.3rem;
+	border: 5px solid rgba(139, 184, 184, 0.397);
+	border-radius: 1.6rem;
+	-webkit-border-radius: 1.6rem;
+	-moz-border-radius: 1.6rem;
+	-ms-border-radius: 1.6rem;
+	-o-border-radius: 1.6rem;
+}
+.block__addition-wind,
+.block__addition-pressure,
+.block__addition-humidity {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+.block__addition-wind__head,
+.block__addition-pressure__head,
+.block__addition-humidity__head {
+	font-weight: normal;
+	font-size: 1.8rem;
+	font-weight: 300;
+}
+.block__addition-wind__info,
+.block__addition-pressure__info,
+.block__addition-humidity__info {
+	display: inline;
+	font-size: 1.8rem;
+}
+.block__addition-item-block {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.block__addition-wind__unit {
+	font-size: 1.8rem;
+	font-weight: 300;
 }

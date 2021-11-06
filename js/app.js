@@ -3,8 +3,13 @@ let block = document.querySelector('.block');
 let region = document.querySelector('.block__head-region');
 let icon = document.querySelector('.block__head-icon');
 let tempBlock = document.querySelector('.block__temp');
-let tempValue = document.querySelector('.block__temp-value');
-let tempType = document.querySelector('.block__temp-type');
+let tempBaseValue = document.querySelector('.block__temp-base-value');
+let tempBaseType = document.querySelector('.block__temp-base-type');
+let tempFeelsValue = document.querySelector('.block__temp-feels-value');
+let tempFeelsType = document.querySelector('.block__temp-feels-type');
+let wind = document.querySelector('.block__addition-wind__info');
+let pressure = document.querySelector('.block__addition-pressure__info');
+let humidity = document.querySelector('.block__addition-humidity__info');
 let descText = document.querySelector('.block__state');
 
 window.addEventListener('load', () => {
@@ -30,12 +35,19 @@ window.addEventListener('load', () => {
 					let desriptionData =
 						responseData['weather'][0]['description'];
 					let iconData = responseData['weather'][0]['icon'];
-					let tempData = Math.round(responseData['main']['temp']);
+					let tempDataBase = Math.round(responseData['main']['temp']);
+					let tempDataFeels = Math.round(
+						responseData['main']['feels_like']
+					);
 					region.innerText = regionData;
 					let iconURL = `http://openweathermap.org/img/wn/${iconData}@2x.png`;
 					icon.innerHTML = `<img src="${iconURL}"></img>`;
-					tempValue.innerText = tempData;
+					tempBaseValue.innerText = tempDataBase;
+					tempFeelsValue.innerText = tempDataFeels;
 					descText.innerText = desriptionData;
+					wind.innerText = responseData['wind']['speed'];
+					pressure.innerText = responseData['main']['pressure'];
+					humidity.innerText = responseData['main']['humidity'];
 				})
 				.catch((err) => console.error(err));
 		});
@@ -44,22 +56,22 @@ window.addEventListener('load', () => {
 	}
 });
 
-let tempBlockState = 'c';
+// let tempBlockState = 'c';
 
-tempBlock.addEventListener('click', (e) => {
-	const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
-	const fahrenheitToCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
-	if (tempBlockState === 'c') {
-		tempValue.innerText = Math.round(
-			celsiusToFahrenheit(tempValue.innerText)
-		);
-		tempType.innerText = 'F';
-		tempBlockState = 'f';
-	} else if (tempBlockState === 'f') {
-		tempValue.innerText = Math.round(
-			fahrenheitToCelsius(tempValue.innerText)
-		);
-		tempType.innerText = 'C';
-		tempBlockState = 'c';
-	}
-});
+// tempBlock.addEventListener('click', (e) => {
+// 	const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+// 	const fahrenheitToCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
+// 	if (tempBlockState === 'c') {
+// 		tempValue.innerText = Math.round(
+// 			celsiusToFahrenheit(tempValue.innerText)
+// 		);
+// 		tempType.innerText = 'F';
+// 		tempBlockState = 'f';
+// 	} else if (tempBlockState === 'f') {
+// 		tempValue.innerText = Math.round(
+// 			fahrenheitToCelsius(tempValue.innerText)
+// 		);
+// 		tempType.innerText = 'C';
+// 		tempBlockState = 'c';
+// 	}
+// });
