@@ -15,13 +15,13 @@ let descText = document.querySelector('.block__state');
 window.addEventListener('load', () => {
 	let lon;
 	let lat;
-
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function (position) {
 			lon = position.coords.longitude;
 			lat = position.coords.latitude;
-			const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&cnt=5&units=metric&appid=${APIkey}`;
-			fetch(api)
+			const apiNow = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&cnt=5&units=metric&appid=${APIkey}`;
+			const apiHourly = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}`;
+			fetch(apiNow)
 				.then((response) => response.json())
 				.then((data) => {
 					spinner.style.display = 'none';
@@ -50,6 +50,13 @@ window.addEventListener('load', () => {
 					humidity.innerText = responseData['main']['humidity'];
 				})
 				.catch((err) => console.error(err));
+
+			// fetch(apiHourly)
+			// 	.then((response) => response.json())
+			// 	.then((data) => {
+			// 		console.log(data);
+			// 	})
+			// 	.catch((err) => console.error(err));
 		});
 	} else {
 		alert('Your browser do not support Geo Location');
@@ -75,3 +82,6 @@ window.addEventListener('load', () => {
 // 		tempBlockState = 'c';
 // 	}
 // });
+
+const elements = document.getElementsByTagName('*');
+VanillaTilt.init(elements);

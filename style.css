@@ -3,6 +3,11 @@
 	padding: 0;
 	box-sizing: border-box;
 	list-style: none;
+	transform: translateZ(40px);
+	-webkit-transform: translateZ(40px);
+	-moz-transform: translateZ(40px);
+	-ms-transform: translateZ(40px);
+	-o-transform: translateZ(40px);
 }
 body {
 	display: grid;
@@ -79,6 +84,7 @@ body {
 	}
 }
 .spinner {
+	color: white;
 	font-size: 5rem;
 	animation: rotating 2s linear infinite, fadeIn 0.2s linear;
 	-webkit-animation: rotating 2s linear infinite, fadeIn 0.2s linear;
